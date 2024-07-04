@@ -16,9 +16,9 @@ func UserRoutes(e *gin.RouterGroup) {
 	idUsage := e.Group("/users")
 	{
 		idUsage.GET("/:id", h.GetUser)
-		idUsage.PATCH("/:id", h.UpdateEmail)
-		idUsage.PATCH("/:id", h.UpdateName)
-		idUsage.PATCH("/:id", h.UpdatePassword)
+		idUsage.PATCH("/email/:id", h.UpdateEmail)
+		idUsage.PATCH("/name/:id", h.UpdateName)
+		idUsage.PATCH("/password/:id", h.UpdatePassword)
 		idUsage.DELETE("/:id", h.DeleteUser)
 	}
 }
